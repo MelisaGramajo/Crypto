@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a38b2f61-8f6a-4cab-b20d-91da1d5a28b0",
+		"_postman_id": "8e3cf212-cc78-43a9-8cec-fbfb141b0d01",
 		"name": "Crypto",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -367,7 +367,7 @@
 						}
 					]
 				},
-				"description": "url: topCryptos\r\nquery: order,top"
+				"description": "url: topCryptos\r\nquery: order(-1 descendent or 1 ascendent),top(1-25)\r\n\r\nSi el top es mayor a 25, retorna 25 porque es el máximo permitido"
 			},
 			"response": [
 				{

@@ -27,6 +27,7 @@ First, you need to create the * .env * file as the example .env-example
 ## APIS 🔗
 * In the folder apiPostman, there are examples of the api to do the tests. 
 * Each API has an added example. See in the right section of Postman.
+* In description request, the parameters are specified
 
 
 

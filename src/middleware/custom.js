@@ -14,7 +14,6 @@ let middlewares = {
         })(req, res, next);
     },
 
-  
     errorHandler: (error, req, res, next) => {
         if(error instanceof error_types.InfoError)
             res.status(200).json({error: error.message});

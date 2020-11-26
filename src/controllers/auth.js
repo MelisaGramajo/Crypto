@@ -12,14 +12,14 @@ const controller = {
     try {
         const user = await User.findOne({ username: req.body.username });
         if (user) {
-          throw new error_types.InfoError("El usuario ya existe");
+          throw new error_types.Error404("El usuario ya existe");
         } else {
           const test= validatePassword(req.body.password);
           if(test===false){
-            throw new error_types.InfoError("Password inválido. Revise formato(Debe contener mínimo 8 caracteres y ser alfanumérico)");
+            throw new error_types.Error404("Password inválido. Revise formato(Debe contener mínimo 8 caracteres y ser alfanumérico)");
           }else{
             if(!typeMoney.includes(req.body.money)){
-              throw new error_types.InfoError("Ingrese un formato de moneda permitido (usd,ars,eur)");
+              throw new error_types.Error404("Ingrese un formato de moneda permitido (usd,ars,eur)");
             }else{
               var hash = bcrypt.hashSync(
                 req.body.password,

@@ -59,7 +59,9 @@ const controller = {
                 arr.push(el);
             });
             let ordenedArr = ordenar(arr, money, orden);
-            if (ordenedArr.length > top) {
+            if(top > 25){
+                ordenedArr = ordenedArr.slice(0, 25);
+            }else if (ordenedArr.length > top) {
                 ordenedArr = ordenedArr.slice(0, top);
             }
             return res.send(ordenedArr);
@@ -72,8 +74,6 @@ const controller = {
 };
 
 /**
- * Devuelve el array ordenado de manera ascendente o descendente, dependiendo del órden pasado
- * Por defecto el orden es descendente
  * @param {1, -1} order 1: Orden ascendente | -1: Orden descendente
  * @param {*} arr Arreglo a ordenar
  * @return Array ordenado
