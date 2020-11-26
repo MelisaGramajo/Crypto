@@ -1,0 +1,458 @@
+{
+	"info": {
+		"_postman_id": "a38b2f61-8f6a-4cab-b20d-91da1d5a28b0",
+		"name": "Crypto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"name\": \"Melisa\",\r\n    \"lastname\": \"Gramajo\",\r\n    \"username\": \"gramajo\",\r\n    \"password\": \"12345678\",\r\n    \"money\": \"usd\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"register"
+					]
+				},
+				"description": "url: /register\r\nbody: name, lastname, username, password and money"
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"name\": \"Melisa\",\r\n    \"lastname\": \"Gramajo\",\r\n    \"username\": \"MelisaRrrr\",\r\n    \"password\": \"usdgrgrgrgr\",\r\n    \"money\": \"usd\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-LI2xGXsiEvGEWZW4Odsq6LX0/tI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 Nov 2020 21:25:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"User created\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"gramajo\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"login"
+					]
+				},
+				"description": "url: /login\r\nbody: username and password"
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"MelisaRrrr\",\r\n    \"password\": \"usdgrgrgrgr\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "161"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a1-dXpSxC2rvK4hufh02pPzGAPNNlo\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 Nov 2020 21:33:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmJlY2JjMWU5OTc2ZDJjZGM4MjIwNDYiLCJpYXQiOjE2MDYzNDAwMjJ9.RQ7_6SAHFHNgzZEnPa4bzV_E6wKZ48LiRgZuqJgoMTc\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ListCripto",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmJlZTI1ZjMyYjMwNDMzMTQyMmYwN2QiLCJleHAiOjE2MDYzNDU0Mzg3NzcsInVzZXJuYW1lIjoiZ3JhbWFqbyJ9.WSdM7UvK842FHa0ipAjk7sAhtlxsNWY9-iVCSVThICc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5001/listAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"listAll"
+					]
+				},
+				"description": "url: /listAll\r\nheader: token"
+			},
+			"response": []
+		},
+		{
+			"name": "AddCrypto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmJlZTI1ZjMyYjMwNDMzMTQyMmYwN2QiLCJleHAiOjE2MDYzNDU0Mzg3NzcsInVzZXJuYW1lIjoiZ3JhbWFqbyJ9.WSdM7UvK842FHa0ipAjk7sAhtlxsNWY9-iVCSVThICc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"crypto\": \"xtz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/addCrypto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"addCrypto"
+					]
+				},
+				"description": "url: /addCrypto\r\nbody: crypto\r\nheader: token"
+			},
+			"response": [
+				{
+					"name": "AddCrypto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmJlZTI1ZjMyYjMwNDMzMTQyMmYwN2QiLCJleHAiOjE2MDYzNDU0Mzg3NzcsInVzZXJuYW1lIjoiZ3JhbWFqbyJ9.WSdM7UvK842FHa0ipAjk7sAhtlxsNWY9-iVCSVThICc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"crypto\": \"xtz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/addCrypto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"addCrypto"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-eQWBz92pVpWvaMs9Pxv8U5GdVuw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Nov 2020 00:54:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"Cryptomoneda añadida con éxito\"\n}"
+				}
+			]
+		},
+		{
+			"name": "TopCryptos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmJlZTI1ZjMyYjMwNDMzMTQyMmYwN2QiLCJleHAiOjE2MDYzNDU0Mzg3NzcsInVzZXJuYW1lIjoiZ3JhbWFqbyJ9.WSdM7UvK842FHa0ipAjk7sAhtlxsNWY9-iVCSVThICc"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5001/topCryptos?top=10&order=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"topCryptos"
+					],
+					"query": [
+						{
+							"key": "top",
+							"value": "10"
+						},
+						{
+							"key": "order",
+							"value": "1"
+						}
+					]
+				},
+				"description": "url: topCryptos\r\nquery: order,top"
+			},
+			"response": [
+				{
+					"name": "TopCryptos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmJlZTI1ZjMyYjMwNDMzMTQyMmYwN2QiLCJleHAiOjE2MDYzNDU0Mzg3NzcsInVzZXJuYW1lIjoiZ3JhbWFqbyJ9.WSdM7UvK842FHa0ipAjk7sAhtlxsNWY9-iVCSVThICc"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5001/topCryptos?top=10&order=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"topCryptos"
+							],
+							"query": [
+								{
+									"key": "top",
+									"value": "10"
+								},
+								{
+									"key": "order",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2141"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"85d-RtJhbeQWo+jPhctf7gezcTUDLl8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Nov 2020 01:19:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"symbol\": \"xem\",\n        \"current_price\": {\n            \"ars\": 14.86,\n            \"eur\": 0.154257,\n            \"usd\": 0.183929\n        },\n        \"name\": \"NEM\",\n        \"image\": {\n            \"thumb\": \"https://assets.coingecko.com/coins/images/242/thumb/NEM_Logo_256x256.png?1598687029\",\n            \"small\": \"https://assets.coingecko.com/coins/images/242/small/NEM_Logo_256x256.png?1598687029\",\n            \"large\": \"https://assets.coingecko.com/coins/images/242/large/NEM_Logo_256x256.png?1598687029\"\n        },\n        \"last_updated\": \"2020-11-26T01:15:36.147Z\"\n    },\n    {\n        \"symbol\": \"theta\",\n        \"current_price\": {\n            \"ars\": 57.59,\n            \"eur\": 0.597822,\n            \"usd\": 0.712818\n        },\n        \"name\": \"Theta Network\",\n        \"image\": {\n            \"thumb\": \"https://assets.coingecko.com/coins/images/2538/thumb/theta-token-logo.png?1548387191\",\n            \"small\": \"https://assets.coingecko.com/coins/images/2538/small/theta-token-logo.png?1548387191\",\n            \"large\": \"https://assets.coingecko.com/coins/images/2538/large/theta-token-logo.png?1548387191\"\n        },\n        \"last_updated\": \"2020-11-26T01:15:56.028Z\"\n    },\n    {\n        \"symbol\": \"dai\",\n        \"current_price\": {\n            \"ars\": 80.9,\n            \"eur\": 0.839733,\n            \"usd\": 1\n        },\n        \"name\": \"Dai\",\n        \"image\": {\n            \"thumb\": \"https://assets.coingecko.com/coins/images/9956/thumb/dai-multi-collateral-mcd.png?1574218774\",\n            \"small\": \"https://assets.coingecko.com/coins/images/9956/small/dai-multi-collateral-mcd.png?1574218774\",\n            \"large\": \"https://assets.coingecko.com/coins/images/9956/large/dai-multi-collateral-mcd.png?1574218774\"\n        },\n        \"last_updated\": \"2020-11-26T01:05:19.632Z\"\n    },\n    {\n        \"symbol\": \"xtz\",\n        \"current_price\": {\n            \"ars\": 213.47,\n            \"eur\": 2.22,\n            \"usd\": 2.64\n        },\n        \"name\": \"Tezos\",\n        \"image\": {\n            \"thumb\": \"https://assets.coingecko.com/coins/images/976/thumb/Tezos-logo.png?1547034862\",\n            \"small\": \"https://assets.coingecko.com/coins/images/976/small/Tezos-logo.png?1547034862\",\n            \"large\": \"https://assets.coingecko.com/coins/images/976/large/Tezos-logo.png?1547034862\"\n        },\n        \"last_updated\": \"2020-11-26T01:14:55.491Z\"\n    },\n    {\n        \"symbol\": \"link\",\n        \"current_price\": {\n            \"ars\": 1161.14,\n            \"eur\": 12.05,\n            \"usd\": 14.37\n        },\n        \"name\": \"Chainlink\",\n        \"image\": {\n            \"thumb\": \"https://assets.coingecko.com/coins/images/877/thumb/chainlink-new-logo.png?1547034700\",\n            \"small\": \"https://assets.coingecko.com/coins/images/877/small/chainlink-new-logo.png?1547034700\",\n            \"large\": \"https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png?1547034700\"\n        },\n        \"last_updated\": \"2020-11-26T01:15:30.070Z\"\n    }\n]"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}

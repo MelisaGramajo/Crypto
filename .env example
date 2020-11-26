@@ -1,0 +1,17 @@
+DATABASE='mongodb+srv://woloxdesafio:woloxdesafio@cluster0.urdnj.mongodb.net/<dbname>?retryWrites=true&w=majority' DEJO COMO EJEMPLO PARA PRUEBAS
+PERO ESTA INFO VA OCULTA
+
+# secret for encryption of jwt signature
+JWT_SECRET=yoursecret
+
+# number of rounds for Blowfish algorithm for hashing user password
+BCRYPT_ROUNDS=12
+
+# lifetime of the token (in seconds)
+JWT_LIFETIME=86400
+
+# algorithm used in token signing
+JWT_ALGORITHM=HS256
+
+# server port
+PORT=5000
